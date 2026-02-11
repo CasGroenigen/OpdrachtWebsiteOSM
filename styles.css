@@ -1,0 +1,131 @@
+/* Page background using a background image and color */
+body {
+    margin: 0; /* Margin */
+    font-family: Arial, Helvetica, sans-serif; /* Font-family */
+    background-color: #f0f4f8; /* Background */
+    background-image: linear-gradient(180deg, #e0efff 0%, #f0f4f8 50%, #ffffff 100%); /* Background-image */
+}
+
+/* Wrapper with padding, margin, and border */
+.page-wrapper {
+    max-width: 960px;
+    margin: 20px auto; /* Margin */
+    padding: 20px; /* Padding */
+    background: #ffffff;
+    border: 2px solid #3498db; /* Border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Hero section */
+.hero {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/60/Openstreetmap_logo.svg");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 80px auto;
+    border-bottom: 1px solid #dfe6e9;
+}
+
+.hero h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.tagline {
+    margin: 0;
+    color: #34495e;
+}
+
+/* Highlighted span */
+.highlight {
+    color: #27ae60;
+}
+
+/* Code-like span */
+.code-span {
+    font-family: "Courier New", monospace;
+    background-color: #ecf0f1;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Intro and details boxes */
+.intro-box,
+.details-box {
+    margin: 20px 0;
+    padding: 15px;
+    border-left: 4px solid #3498db;
+    background-color: #f8fbff;
+}
+
+/* Image panel with centered content */
+.image-panel {
+    margin: 20px 0;
+    padding: 15px;
+    text-align: center;
+    background-color: #fdfefe;
+    border: 1px solid #dfe6e9;
+}
+
+.osm-logo {
+    max-width: 200px;
+    margin: 10px 0;
+    border: 3px solid #2ecc71; /* Border */
+    padding: 5px; /* Padding */
+    background-color: #ffffff; /* Background */
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* Note text */
+.note {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+/* Footer */
+.footer {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #dfe6e9;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.footer a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Base style for mobile devices */
+body {
+  background-color: olive;
+  color: rgb(141, 249, 0);
+}
+
+/* For devices with a minimum width of 768px (Medium) */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: blue;
+    color: rgb(191, 0, 255);
+  }
+}
+
+/* For devices with a minimum width of 992px (Large) */
+@media screen and (min-width: 992px) {
+  body {
+    background-color: tan;
+    color: black;
+  }
+}

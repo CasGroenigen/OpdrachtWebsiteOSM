@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapid Editor - OpenStreetMap</title>
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Reset en basisstyling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #feca57 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* Hoofdcontainer */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.97);
+            border: 4px solid #e74c3c;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.3);
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #c0392b;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            font-weight: 300;
+        }
+        
+        /* Intro sectie */
+        .intro {
+            background: #fdf2f2;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 6px solid #e74c3c;
+            border-radius: 10px;
+        }
+        
+        .intro h2 {
+            color: #c0392b;
+            margin-bottom: 15px;
+        }
+        
+        .intro p {
+            line-height: 1.8;
+            color: #2c3e50;
+            font-size: 1.15em;
+        }
+        
+        /* Features grid */
+        .features {
+            margin-bottom: 40px;
+        }
+        
+        .features h2 {
+            color: #c0392b;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        
+        .feature-card {
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            border: 3px solid #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: #e74c3c;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            color: #e74c3c;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+        
+        /* CTA knop */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .rapid-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .rapid-btn:hover {
+            background: linear-gradient(135deg, #c0392b, #a93226);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(231, 76, 60, 0.6);
+        }
+        
+        /* Vergelijking */
+        .comparison {
+            background: #fff5f5;
+            padding: 30px;
+            border: 2px dashed #f39c12;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        
+        .comparison h2 {
+            color: #e67e22;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .pros-cons {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .pros, .cons {
+            flex: 1;
+            min-width: 280px;
+        }
+        
+        .pros h3 {
+            color: #27ae60;
+        }
+        
+        .cons h3 {
+            color: #e74c3c;
+        }
+        
+        .pros ul, .cons ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .pros li, .cons li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .pros li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .cons li:before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            
+            .header h1 {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1><span style="color: #e74c3c; font-weight: bold;">Rapid</span> Editor</h1>
+            <p>Krachtige, browser-based OpenStreetMap editor</p>
+        </div>
+
+        <!-- Intro -->
+        <section class="intro">
+            <h2>Wat is Rapid?</h2>
+            <p>
+                Rapid is een <strong>volledig in de browser werkende</strong> editor voor OpenStreetMap, 
+                speciaal ontworpen voor snelle maar toch grotere bewerkingen dan met de iD editor. Er is geen installatie nodig - 
+                gewoon openen in de browser en direct beginnen met editen!
+            </p>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <h2>Hoofdkenmerken</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Geen installatie</h3>
+                    <p>Werkt direct in elke moderne browser. Geen Java of downloads nodig.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Super snel</h3>
+                    <p>Geoptimaliseerd voor snelle bewerkingen van wegen, gebouwen en POI's.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Moderne UI</h3>
+                    <p>Intuïtieve interface met slimme presets en live validatie.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <a href="https://rapideditor.org/" target="_blank" class="rapid-btn" onclick="window.open('https://rapideditor.org/', '_blank'); return false;">
+                Start Rapid Editor
+            </a>
+        </section>
+
+        <!-- Vergelijking -->
+        <section class="comparison">
+            <h2>Perfect voor:</h2>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h3>✅ Voordelen</h3>
+                    <ul>
+                        <li>Direct toegankelijk online</li>
+                        <li>Ideaal voor beginners</li>
+                        <li>Snelle edits</li>
+                        <li>Werkt op bijna elk apparaat</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h3>❌ Beperkingen</h3>
+                    <ul>
+                        <li>Geen geavanceerde plugins</li>
+                        <li>Beperkte imagery layers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            Rapid Editor • Gratis en open source • 
+            <a href="https://wiki.openstreetmap.org/wiki/Rapid" target="_blank" style="color: #e74c3c;">Wiki</a>
+        </footer>
+    </div>
+
+    <script>
+        console.log("Rapid Editor pagina geladen!");
+    </script>
+</body>
+</html>

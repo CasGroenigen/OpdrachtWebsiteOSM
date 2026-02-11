@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Simple OpenStreetMap info pagina -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenStreetMap Intro</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Main container -->
+    <div class="page-wrapper">
+      <header class="hero">
+        <h1>Welcome to <span class="highlight">OpenStreetMap</span></h1>
+        <p class="tagline">
+          OpenStreetMap is a collaborative project that creates a free, editable
+          map of the world, built by volunteers who survey, edit, and maintain
+          data about roads, trails, cafés, and much more.
+        </p>
+      </header>
+
+      <main>
+        <section class="intro-box">
+          <h2>What is OpenStreetMap?</h2>
+          <p>
+            OpenStreetMap (OSM) is a global mapping project where anyone can
+            contribute geographic data such as streets, buildings, and points of
+            interest. The data is open and can be used in websites, apps, and
+            research.
+          </p>
+          <p>
+            The map data is stored as objects with tags like
+            <span class="code-span">highway=residential</span> or
+            <span class="code-span">building=yes</span> to describe real-world
+            features.
+          </p>
+        </section>
+
+        <section class="image-panel">
+          <h2>Sample Map View</h2>
+          <!-- Voorbeeld image van OpenStreetMap -->
+          <img
+            src="https://openmaptiles.org/img/styles/openmaptiles.png"
+            alt="OpenStreetMap logo"
+            class="osm-logo"
+          />
+        </section>
+
+        <section class="details-box">
+          <h2>Why use OpenStreetMap?</h2>
+          <ul>
+            <li>Free and open geographic data.</li>
+            <li>Large and active mapping community.</li>
+            <li>
+              Used in navigation apps, research, and humanitarian projects.
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <section class="editors-section">
+        <h2>Editors</h2>
+        <p>Kies een editor om OSM-data te bewerken: JOSM of Rapid.</p>
+        <div class="buttons-container">
+          <button
+            class="editor-btn josm-btn"
+            onclick="window.open('file:josm.html', '_blank')"
+          >
+            JOSM
+          </button>
+          <button
+            class="editor-btn rapid-btn"
+            onclick="window.open('file:Rapid.html', '_blank')"
+          >
+            Rapid
+          </button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Learn more at
+          <a
+            href="https://wiki.openstreetmap.org/wiki/Main_Page"
+            target="_blank"
+          >
+            the OpenStreetMap Wiki </a
+          >.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Simple script example -->
+    <script>
+      // Add a subtle message in the console
+      console.log("Welcome to the OpenStreetMap demo page!");
+    </script>
+  </body>
+</html>
